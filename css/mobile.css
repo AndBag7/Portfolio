@@ -1,0 +1,110 @@
+/* --- ZAAWANSOWANE ULEPSZENIA MOBILNE --- */
+@media (max-width: 768px) {
+    :root {
+        --mobile-padding: 15px;
+    }
+
+    .container {
+        width: 95% !important; /* Większa szerokość na telefonach */
+        padding: 15px 5px !important;
+    }
+
+    header {
+        padding: 40px 10px 20px 10px !important;
+    }
+
+    .header-content {
+        gap: 15px !important;
+    }
+
+    h1 {
+        font-size: 1.8em !important;
+        margin-bottom: 10px !important;
+    }
+
+    h2 {
+        font-size: 1.5em !important;
+        margin: 20px 0 15px 0 !important;
+    }
+
+    /* --- NAWIGACJA --- */
+    .nav-links {
+        padding: 10px 5px !important;
+        gap: 15px !important; /* Większe odstępy dla dotyku */
+    }
+
+    .nav-links a {
+        font-size: 0.95em !important;
+    }
+
+    /* --- ELEMENTY I KARTY --- */
+    .grid {
+        grid-template-columns: 1fr !important; /* Zawsze jedna kolumna na mobile */
+        gap: 15px !important;
+    }
+
+    .card {
+        padding: 15px !important;
+        margin-bottom: 10px;
+    }
+
+    .profile-img {
+        width: 130px !important;
+        height: 130px !important;
+    }
+
+    /* --- PRZYCISKI --- */
+    .btn, 
+    .btn-small,
+    .contact-links .btn-small {
+        display: block !important;
+        width: 90% !important;
+        max-width: 320px !important;
+        margin: 10px auto !important;
+        padding: 14px 20px !important; /* Większy obszar klikalny */
+        font-size: 1em !important;
+        text-align: center !important;
+    }
+
+    /* --- PROJEKTY I WIDEO --- */
+    .project-highlight {
+        padding: 20px 15px !important;
+        border-left-width: 4px !important;
+    }
+
+    .project-grid {
+        gap: 15px !important;
+    }
+
+    .project-item ul {
+        text-align: left !important; /* Lista zadań lepiej wygląda wyrównana do lewej */
+        display: inline-block;
+        width: auto;
+    }
+
+    .video-info {
+        margin-bottom: 15px !important;
+    }
+
+    iframe, 
+    .video-embed {
+        border-radius: 8px !important;
+        min-height: 200px !important;
+    }
+
+    /* --- STOPKA --- */
+    footer {
+        padding: 30px 15px !important;
+    }
+}
+
+/* Dodatkowe dopracowanie dla bardzo małych ekranów */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em !important;
+    }
+
+    .nav-links a {
+        font-size: 0.85em !important;
+    }
+}
