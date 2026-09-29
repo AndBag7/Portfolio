@@ -5,21 +5,54 @@
     }
 
     .container {
-        width: 95% !important; /* Większa szerokość na telefonach */
+        width: 92% !important;
         padding: 15px 5px !important;
     }
 
+    /* --- NAWIGACJA (Przewijana poziomo na telefonach) --- */
+	.navbar {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .navbar::-webkit-scrollbar {
+        display: none;
+    }
+
+	.nav-links {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding: 12px 15px !important;
+        gap: 15px !important;
+        width: max-content;
+    }
+
+	.nav-links li {
+        display: inline-block !important;
+        flex-shrink: 0 !important;
+    }
+
+	.nav-links a {
+        font-size: 0.9em !important;
+        padding: 5px 8px !important;
+        white-space: nowrap !important;
+    }
+
+    /* --- NAGŁÓWEK --- */
     header {
-        padding: 40px 10px 20px 10px !important;
+        padding: 30px 10px 20px 10px !important;
     }
 
     .header-content {
         gap: 15px !important;
+        flex-direction: column;
     }
 
     h1 {
         font-size: 1.8em !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 5px !important;
     }
 
     h2 {
@@ -27,30 +60,19 @@
         margin: 20px 0 15px 0 !important;
     }
 
-    /* --- NAWIGACJA --- */
-    .nav-links {
-        padding: 10px 5px !important;
-        gap: 15px !important; /* Większe odstępy dla dotyku */
+    .profile-img {
+        width: 120px !important;
+        height: 120px !important;
     }
 
-    .nav-links a {
-        font-size: 0.95em !important;
-    }
-
-    /* --- ELEMENTY I KARTY --- */
+    /* --- GRID I KARTY --- */
     .grid {
-        grid-template-columns: 1fr !important; /* Zawsze jedna kolumna na mobile */
+        grid-template-columns: 1fr !important;
         gap: 15px !important;
     }
 
     .card {
         padding: 15px !important;
-        margin-bottom: 10px;
-    }
-
-    .profile-img {
-        width: 130px !important;
-        height: 130px !important;
     }
 
     /* --- PRZYCISKI --- */
@@ -58,12 +80,13 @@
     .btn-small,
     .contact-links .btn-small {
         display: block !important;
-        width: 90% !important;
-        max-width: 320px !important;
+        width: 100% !important;
+        max-width: 300px !important;
         margin: 10px auto !important;
-        padding: 14px 20px !important; /* Większy obszar klikalny */
-        font-size: 1em !important;
+        padding: 12px 18px !important;
+        font-size: 0.95em !important;
         text-align: center !important;
+        box-sizing: border-box;
     }
 
     /* --- PROJEKTY I WIDEO --- */
@@ -74,12 +97,12 @@
 
     .project-grid {
         gap: 15px !important;
+        margin-bottom: 20px !important;
     }
 
     .project-item ul {
-        text-align: left !important; /* Lista zadań lepiej wygląda wyrównana do lewej */
-        display: inline-block;
-        width: auto;
+        text-align: left !important;
+        padding-left: 20px !important;
     }
 
     .video-info {
@@ -98,13 +121,17 @@
     }
 }
 
-/* Dodatkowe dopracowanie dla bardzo małych ekranów */
+/* Dodatkowe dopracowanie dla ekranów poniżej 480px (np. małe smartfony) */
 @media (max-width: 480px) {
     h1 {
         font-size: 1.6em !important;
     }
 
+    .nav-links {
+        gap: 15px !important;
+    }
+
     .nav-links a {
-        font-size: 0.85em !important;
+        font-size: 0.9em !important;
     }
 }
