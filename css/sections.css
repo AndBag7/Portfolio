@@ -69,9 +69,27 @@ footer {
 }
 
 /* --- FILMY YOUTUBE --- */
+.youtube-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.video-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.video-info .btn {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
 .video-embed {
     position: relative;
-    padding-bottom: 56.25%; /* Proporcja 16:9 (9 / 16 = 0.5625) */
+    padding-bottom: 56.25%; /* Proporcja 16:9 */
     height: 0;
     overflow: hidden;
     border-radius: 12px;
@@ -86,4 +104,12 @@ footer {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* Responsywność dla sekcji YouTube */
+@media (max-width: 768px) {
+    .youtube-wrapper {
+        grid-template-columns: 1fr; /* Na telefonie uczyń 1 kolumnę */
+        gap: 20px;
+    }
 }

@@ -4,40 +4,45 @@
         --mobile-padding: 15px;
     }
 
+    /* Zezwolenie na przewijanie elementów w krawędziach */
+    html, body {
+        overflow-x: hidden;
+    }
+
     .container {
         width: 92% !important;
         padding: 15px 5px !important;
+        overflow: visible !important;
     }
 
-    /* --- NAWIGACJA (Przewijana poziomo na telefonach) --- */
-	.navbar {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+    /* --- NAWIGACJA MOBILNA (Zawijana w dwuwierszowy/czytelny pasek) --- */
+    .navbar {
+        overflow: visible !important;
+        width: 100% !important;
     }
 
-    .navbar::-webkit-scrollbar {
-        display: none;
-    }
-
-	.nav-links {
+    .nav-links {
         display: flex !important;
-        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
         align-items: center !important;
-        padding: 12px 15px !important;
-        gap: 15px !important;
-        width: max-content;
+        padding: 10px 5px !important;
+        gap: 8px 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
-	.nav-links li {
+    .nav-links li {
         display: inline-block !important;
         flex-shrink: 0 !important;
     }
 
-	.nav-links a {
-        font-size: 0.9em !important;
-        padding: 5px 8px !important;
+    .nav-links a {
+        font-size: 0.85em !important;
+        padding: 4px 8px !important;
         white-space: nowrap !important;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
     }
 
     /* --- NAGŁÓWEK --- */
@@ -121,17 +126,18 @@
     }
 }
 
-/* Dodatkowe dopracowanie dla ekranów poniżej 480px (np. małe smartfony) */
+/* Dopracowanie dla ekranów małych smartfonów (poniżej 480px) */
 @media (max-width: 480px) {
     h1 {
         font-size: 1.6em !important;
     }
 
     .nav-links {
-        gap: 15px !important;
+        gap: 6px 8px !important;
     }
 
     .nav-links a {
-        font-size: 0.9em !important;
+        font-size: 0.8em !important;
+        padding: 3px 6px !important;
     }
 }
